@@ -8,6 +8,6 @@
   [[r g b]] [g g g])
 
 (def image-filters {
-  "invert" invert
-  "desaturate" desaturate
+  :invert invert
+  :desaturate desaturate
 })

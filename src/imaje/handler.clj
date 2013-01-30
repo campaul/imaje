@@ -22,7 +22,7 @@
       [:input {:type "submit" :name "submit" :value "Filter"}]]))
 
 (defn upload-file [file filter]
-  (save-image (filter-image (load-image file) (image-filters filter))))
+  (save-image (filter-image (load-image file) (image-filters (keyword filter)))))
 
 (defroutes app-routes
   (GET "/" [] (home-page))
