@@ -10,7 +10,7 @@
 
 (defn home-page []
   (html
-    [:form {:action "/file" :method "post" :enctype "multipart/form-data"}
+    [:form {:action "/filter" :method "post" :enctype "multipart/form-data"}
       [:input {:name "file" :type "file"}]
       [:div
         [:input
