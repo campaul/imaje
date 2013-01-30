@@ -20,12 +20,12 @@
     (.getDataBuffer
       (.getRaster image))))
 
-(defn getPixel [bytes index]
+(defn get-pixel [bytes index]
   [(nth bytes index)
    (nth bytes (+ 1 index))
    (nth bytes (+ 2 index))])
 
-(defn setPixel [bytes index [r g b]]
+(defn set-pixel [bytes index [r g b]]
   (do
     (aset-byte bytes index r)
     (aset-byte bytes (+ index 1) g)
@@ -35,7 +35,7 @@
   (if
     (< index (count bytes))
     (do
-      (setPixel bytes index (fltr (getPixel bytes index)))
+      (set-pixel bytes index (fltr (get-pixel bytes index)))
       (recur (+ index 3) bytes fltr))))
 
 (defn filter-image [image fltr] 
